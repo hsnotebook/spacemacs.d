@@ -54,6 +54,11 @@
 			   entry (file+datetree "~/org-notes/journal.org")
 			   "* %?"
 			   :empty-lines 1)))
+
+	  (org-babel-do-load-languages 'org-babel-load-languages '((plantuml . t)))
+	  (if (eq system-type 'windows-nt)
+		  (setq org-plantuml-jar-path "d:/program/plantuml/plantuml.jar")
+		(setq org-plantuml-jar-path "/home/hs/bin/plantuml.jar"))
 	  )))
 
 (defun hsnotebook/post-init-emacs-eclim ()
