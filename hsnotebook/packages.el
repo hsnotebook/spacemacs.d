@@ -34,38 +34,35 @@
 	emacs-eclim))
 
 (defun hsnotebook/post-init-org ()
-  (with-eval-after-load 'org
-	(progn
-	  ;; defin the refile targets
-	  (setq org-agenda-files (quote ("~/org-notes/")))
-	  (setq org-default-notes-file "~/org-notes/gtd.org")
+  ;; defin the refile targets
+  (setq org-agenda-files (quote ("~/org-notes/")))
+  (setq org-default-notes-file "~/org-notes/gtd.org")
 
-	  (setq org-capture-templates
-			'(("l" "Life" entry (file+headline "~/org-notes/gtd.org" "Life")
-			   "* TODO [#B] %?\n  %i\n"
-			   :empty-lines 1)
-			  ("w" "Work" entry (file+headline "~/org-notes/gtd.org" "Work")
-			   "* TODO [#B] %?\n  %i\n"
-			   :empty-lines 1)
-			  ("n" "notes" entry (file+headline "~/org-notes/notes.org" "Quick notes")
-			   "* TODO [#C] %?\n  %i\n %U"
-			   :empty-lines 1)
-			  ("j" "Journal Entry"
-			   entry (file+datetree "~/org-notes/journal.org")
-			   "* %?"
-			   :empty-lines 1)))
+  (setq org-capture-templates
+		'(("l" "Life" entry (file+headline "~/org-notes/gtd.org" "Life")
+		   "* TODO [#B] %?\n  %i\n"
+		   :empty-lines 1)
+		  ("w" "Work" entry (file+headline "~/org-notes/gtd.org" "Work")
+		   "* TODO [#B] %?\n  %i\n"
+		   :empty-lines 1)
+		  ("n" "notes" entry (file+headline "~/org-notes/notes.org" "Quick notes")
+		   "* TODO [#C] %?\n  %i\n %U"
+		   :empty-lines 1)
+		  ("j" "Journal Entry"
+		   entry (file+datetree "~/org-notes/journal.org")
+		   "* %?"
+		   :empty-lines 1)))
 
-	  (org-babel-do-load-languages 'org-babel-load-languages '((plantuml . t)))
-	  (if (eq system-type 'windows-nt)
-		  (setq org-plantuml-jar-path "d:/program/plantuml/plantuml.jar")
-		(setq org-plantuml-jar-path "/home/hs/bin/plantuml.jar"))
-	  )))
+  (org-babel-do-load-languages 'org-babel-load-languages '((plantuml . t)))
+  (if (eq system-type 'windows-nt)
+	  (setq org-plantuml-jar-path "d:/program/plantuml/plantuml.jar")
+	(setq org-plantuml-jar-path "/home/hs/bin/plantuml.jar")))
 
 (defun hsnotebook/post-init-emacs-eclim ()
-  (with-eval-after-load 'eclim
-	(progn
-	  (if (eq system-type 'windows-nt)
-		  (setq eclim-eclipse-dirs "d:/program/eclipse"
-				eclim-executable "d:/program/eclipse/eclim")))))
+  (if (eq system-type 'windows-nt)
+	  (setq eclim-eclipse-dirs "d:/program/eclipse"
+			eclim-executable "d:/program/eclipse/eclim")
+	(setq eclim-eclipse-dirs "/home/hs/bin/eclipse"
+		  eclim-executable "/home/hs/bin/eclipse/eclim")))
 
 ;;; packages.el ends here
