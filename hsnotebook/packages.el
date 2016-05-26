@@ -31,7 +31,8 @@
 (defconst hsnotebook-packages
   '(
 	org
-	emacs-eclim))
+	emacs-eclim
+	company))
 
 (defun hsnotebook/post-init-org ()
   ;; defin the refile targets
@@ -64,5 +65,9 @@
 			eclim-executable "d:/program/eclipse/eclim")
 	(setq eclim-eclipse-dirs "/home/hs/bin/eclipse"
 		  eclim-executable "/home/hs/bin/eclipse/eclim")))
+
+(defun hsnotebook/post-init-company ()
+  (add-hook 'java-mode-hook (lambda ()
+							  (setq-local company-idle-delay 0.7))))
 
 ;;; packages.el ends here
