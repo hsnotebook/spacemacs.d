@@ -32,7 +32,11 @@
   '(
 	org
 	emacs-eclim
-	company))
+	youdao-dictionary
+	company
+	pangu-spacing))
+
+(spacemacs/declare-prefix "o" "user-defined")
 
 (defun hsnotebook/post-init-org ()
   ;; defin the refile targets
@@ -69,5 +73,11 @@
 (defun hsnotebook/post-init-company ()
   (add-hook 'java-mode-hook (lambda ()
 							  (setq-local company-idle-delay 0.7))))
+
+(defun hsnotebook/post-init-pangu-spacing ()
+  (setq pangu-spacing-real-insert-separtor t))
+
+(defun hsnotebook/post-init-youdao-dictionary ()
+  (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+))
 
 ;;; packages.el ends here

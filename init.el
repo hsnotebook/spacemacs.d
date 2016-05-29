@@ -34,6 +34,10 @@ values."
 	 markdown
 	 org
 	 python
+	 (chinese :variables
+			  chinese-default-input-method 'wubi
+			  chinese-enable-fcitx t
+			  chinese-enable-youdao-dict t)
 	 ;; games
 	 ;; (shell :variables
 	 ;;        shell-default-height 30
@@ -250,6 +254,6 @@ in `dotspacemacs/user-config'."
 This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
 
-	;; custom file
-	(setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
-	(load custom-file 'no-error 'no-message))
+  ;; custom file
+  (setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
+  (load custom-file 'no-error 'no-message))
