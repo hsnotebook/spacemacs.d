@@ -14,7 +14,7 @@
   (setq tab-width 2))
 (add-hook 'nxml-mode-hook 'my-nxml-mode-hook)
 
-(add-to-list 'auto-mode-alist '(".xml") . emmet-mode)
+(add-to-list 'auto-mode-alist '(".xml" . emmet-mode))
 
 ;; search regex
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
