@@ -34,6 +34,7 @@ values."
 	 markdown
 	 org
 	 python
+	 shell
 	 (chinese :variables
 			  chinese-default-input-method 'wubi
 			  chinese-enable-fcitx t
