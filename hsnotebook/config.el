@@ -29,4 +29,4 @@
 
 ;; Set default private snippets
 (setq auto-completion-private-snippets-directory
-	  (expand-file-name "snippet" dotspacemacs-directory))
+	  (expand-file-name "snippets" dotspacemacs-directory))
