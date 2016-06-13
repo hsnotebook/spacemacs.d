@@ -30,3 +30,5 @@
 ;; Set default private snippets
 (setq auto-completion-private-snippets-directory
 	  (expand-file-name "snippets" dotspacemacs-directory))
+
+(add-hook 'before-save-hook 'whitespace-cleanup)
