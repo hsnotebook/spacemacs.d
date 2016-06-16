@@ -35,6 +35,7 @@ values."
 	 org
 	 python
 	 shell
+	 cscope
 	 (chinese :variables
 			  chinese-default-input-method 'wubi
 			  chinese-enable-fcitx t

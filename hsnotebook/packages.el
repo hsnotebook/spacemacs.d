@@ -34,6 +34,7 @@
 	emacs-eclim
 	youdao-dictionary
 	company
+	xcscope
 	pangu-spacing))
 
 (spacemacs/declare-prefix "o" "user-defined")
@@ -79,5 +80,10 @@
 
 (defun hsnotebook/post-init-youdao-dictionary ()
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+))
+
+(defun hsnotebook/post-init-xcscope ()
+  (with-eval-after-load 'xcscope
+	(add-to-list 'cscope-indexer-suffixes "*.java")
+	(spacemacs/setup-helm-cscope 'java-mode) ))
 
 ;;; packages.el ends here
