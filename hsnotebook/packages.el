@@ -35,6 +35,7 @@
 	youdao-dictionary
 	company
 	xcscope
+	helm
 	pangu-spacing))
 
 (spacemacs/declare-prefix "o" "user-defined")
@@ -85,5 +86,10 @@
   (with-eval-after-load 'xcscope
 	(add-to-list 'cscope-indexer-suffixes "*.java")
 	(spacemacs/setup-helm-cscope 'java-mode) ))
+
+(defun hsnotebook/post-init-helm ()
+  (with-eval-after-load 'helm
+	(define-key helm-map (kbd "M-v") 'helm-buffer-switch-right-window)
+	(define-key helm-map (kbd "M-s") 'helm-buffer-switch-down-window)))
 
 ;;; packages.el ends here
